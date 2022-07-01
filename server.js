@@ -1,6 +1,6 @@
 // Required Modules //
 
-const { request, response } = require('express')
+const { req, res } = req('express')
 const express = require('express')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
