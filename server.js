@@ -29,7 +29,7 @@ app.use(express.json())
 // API // 
 
 app.get('/',(req, res)=>{
-    db.collection('characters').find().cosrt({likes: -1}).toArray()
+    db.collection('characters').find().sort({likes: -1}).toArray()
     .then(data => {
         res.render('index.ejs', {info: data})
     })
