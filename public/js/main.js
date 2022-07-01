@@ -32,6 +32,7 @@ async function deleteCharacter(){
 async function addLike(){
     const charName = this.parentNode.childNodes[1].innerText
     const clsName = this.parentNode.childNodes[3].innerText
+    const tLikes = Number(this.parentNode.childNodes[5].innerText)
     try{
         const res = await fetch('addOneLike', {
             method: 'put',
