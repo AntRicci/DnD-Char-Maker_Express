@@ -38,7 +38,7 @@ app.get('/',(req, res)=>{
 app.post('/addCharacter', (req, res)=>{
     db.collection('characters').insertOne({characterName: req.body.characterName,
     className: req.body.className, likes: 0})
-    .then(res => {
+    .then(result => {
         console.log('Character Added')
         res.redirect('/')
     })
@@ -53,7 +53,7 @@ app.put('/addOneLike', (req, res)=>{
         sort: {_id: -1},
         upsert: true
     })
-    .then(res => {
+    .then(result => {
         console.log('Added One Like')
         res.json('Like Added')
     })
@@ -63,7 +63,7 @@ app.put('/addOneLike', (req, res)=>{
 
 app.delete('/deleteCharacter', (req, res)=>{
     db.collection('characters').deleteOne({characterName: req.body.characterNameS})
-    .then(res => {
+    .then(result => {
         console.log('Character Deleted')
         res.json('Character Deleted')
     })
