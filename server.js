@@ -32,7 +32,7 @@ app.get('/',(req, res)=>{
     .then(data => {
         res.render('index.ejs', {info: data})
     })
-    .cath(error => console.error(error))
+    .catch(error => console.error(error))
 })
 
 app.post('/addCharacter', (req, res)=>{
